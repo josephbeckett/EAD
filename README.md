@@ -3,11 +3,14 @@
 Enterprise Application Development for BSc(hons) Computer Science Degree Module
 
 THE ASSIGNMENT PROBLEM
+
 In this module, you take on the role of consultants/development team creating an enterprise Management Information System for a company called Mellor415.   
 
 There are two parts to this assessment
 
-Part 1 	Develop an enterprise solution for Mellor415 (60% of the module marks) 
+Part 1 	
+
+Develop an enterprise solution for Mellor415 (60% of the module marks) 
 In this part of the assignment, you will work in groups of 4 to establish the company’s requirements and  to design and build a database which provides a Management Information Systems solution for the company, including GDPR compliance,  data security and database management functionality 
 
 INFORMATION ABOUT MELLOR415
