@@ -1,0 +1,14 @@
+SELECT Contract, SkillLevel,
+CASE 
+    WHEN SkillLevel = 1 AND Contract = 'Full-Time' THEN sum(((50*8)*5)*52)
+    WHEN SkillLevel = 2 AND Contract = 'Full-Time' THEN sum(((40*8)*5)*52)
+    WHEN SkillLevel = 3 AND Contract = 'Full-Time' THEN sum(((15*8)*5)*52)  
+    WHEN SkillLevel = 4 AND Contract = 'Full-Time' THEN sum(((8.72*8)*5)*52)
+    
+    WHEN SkillLevel = 2 AND Contract = 'Part-Time' THEN sum(((40*6)*4)*52)
+    WHEN SkillLevel = 3 AND Contract = 'Part-Time' THEN sum(((15*6)*4)*52)  
+    WHEN SkillLevel = 4 AND Contract = 'Part-Time' THEN sum(((8.72*6)*4)*52)
+END AS "Total Salary"
+FROM EMPLOYEE 
+GROUP BY Contract, SkillLevel
+ORDER BY Contract;
