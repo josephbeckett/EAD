@@ -16,7 +16,7 @@
 
 --------------------------------------------------------------
 
-
+alter session set nls_date_format = 'YYYY-MM-DD HH24:MI:SS'
 
 --------------------------------------------------------------
 -- Table Creation --
@@ -202,7 +202,7 @@ CREATE TABLE project_contacts(
 	dateContacted Date,
 	PRIMARY KEY (s_projectID,d_contactID),
 	FOREIGN KEY(s_projectID) REFERENCES project(projectID) ,
-	FOREIGN KEY(d_contactID) REFERENCES contacts(contactID) 
+	FOREIGN KEY(d_contactID) REFERENCES contacts(contactID)
 );
 
 
@@ -222,7 +222,7 @@ CREATE TABLE project_contacts(
 
 ALTER TABLE project
 ADD (
-	CONSTRAINT fk1_pro_to_client FOREIGN KEY(fk1_clientID) REFERENCES client(clientID) 
+	CONSTRAINT fk1_pro_to_client FOREIGN KEY(fk1_clientID) REFERENCES client(clientID)
 );
 
 -- Alter table to add new constraints required to implement the "cli-cont" relationship
@@ -232,7 +232,7 @@ ADD (
 
 ALTER TABLE contacts
 ADD (
-	CONSTRAINT fk1_contacts_to_client FOREIGN KEY(fk1_clientID) REFERENCES client(clientID) 
+	CONSTRAINT fk1_contacts_to_client FOREIGN KEY(fk1_clientID) REFERENCES client(clientID)
 );
 
 -- Alter table to add new constraints required to implement the "proteam-pat" relationship
@@ -242,7 +242,7 @@ ADD (
 
 ALTER TABLE projectActivities
 ADD (
-	CONSTRAINT fk1_proActiv_to_proTeamMem FOREIGN KEY(fk1_projectTeamMembersID) REFERENCES projectTeamMembers(projectTeamMembersID) 
+	CONSTRAINT fk1_proActiv_to_proTeamMem FOREIGN KEY(fk1_projectTeamMembersID) REFERENCES projectTeamMembers(projectTeamMembersID)
 );
 
 -- Alter table to add new constraints required to implement the "proteam-pro" relationship
@@ -252,7 +252,7 @@ ADD (
 
 ALTER TABLE projectTeam_project
 ADD (
-	CONSTRAINT fk1_proTeam_pro_to_proTeamMem FOREIGN KEY(fk1_projectTeamMembersID) REFERENCES projectTeamMembers(projectTeamMembersID) 
+	CONSTRAINT fk1_proTeam_pro_to_proTeamMem FOREIGN KEY(fk1_projectTeamMembersID) REFERENCES projectTeamMembers(projectTeamMembersID)
 );
 
 -- Alter table to add new constraints required to implement the "pro-proteam" relationship
@@ -262,7 +262,7 @@ ADD (
 
 ALTER TABLE projectTeam_project
 ADD (
-	CONSTRAINT fk2_proTeam_pro_to_pro FOREIGN KEY(fk2_projectID) REFERENCES project(projectID) 
+	CONSTRAINT fk2_proTeam_pro_to_pro FOREIGN KEY(fk2_projectID) REFERENCES project(projectID)
 );
 
 -- Alter table to add new constraints required to implement the "projectHours_projectTeam_project" relationship
@@ -272,7 +272,7 @@ ADD (
 
 ALTER TABLE projectHours
 ADD (
-	CONSTRAINT fk1_proHours_to_proTeamMem FOREIGN KEY(fk1_projectTeamMembersID) REFERENCES projectTeamMembers(projectTeamMembersID) 
+	CONSTRAINT fk1_proHours_to_proTeamMem FOREIGN KEY(fk1_projectTeamMembersID) REFERENCES projectTeamMembers(projectTeamMembersID)
 );
 
 -- Alter table to add new constraints required to implement the "employeeRoles_employee" relationship
@@ -282,7 +282,7 @@ ADD (
 
 ALTER TABLE employeeRoles
 ADD (
-	CONSTRAINT fk1_empRoles_to_employee FOREIGN KEY(fk1_employeeID) REFERENCES employee(employeeID) 
+	CONSTRAINT fk1_empRoles_to_employee FOREIGN KEY(fk1_employeeID) REFERENCES employee(employeeID)
 );
 
 -- Alter table to add new constraints required to implement the "employeeRoles_roles" relationship
@@ -292,7 +292,7 @@ ADD (
 
 ALTER TABLE employeeRoles
 ADD (
-	CONSTRAINT fk2_empRoles_to_roles FOREIGN KEY(fk2_roleID) REFERENCES roles(roleID) 
+	CONSTRAINT fk2_empRoles_to_roles FOREIGN KEY(fk2_roleID) REFERENCES roles(roleID)
 );
 
 -- Alter table to add new constraints required to implement the "projectTeamMembers_employeeRoles" relationship
@@ -302,7 +302,7 @@ ADD (
 
 ALTER TABLE projectTeamMembers
 ADD (
-	CONSTRAINT fk1_proTeamMem_to_empRoles FOREIGN KEY(fk1_employeeroleID) REFERENCES employeeRoles(employeeroleID) 
+	CONSTRAINT fk1_proTeamMem_to_empRoles FOREIGN KEY(fk1_employeeroleID) REFERENCES employeeRoles(employeeroleID)
 );
 
 -- Alter table to add new constraints required to implement the "payments_project" relationship
@@ -312,7 +312,7 @@ ADD (
 
 ALTER TABLE payments
 ADD (
-	CONSTRAINT fk1_payments_to_project FOREIGN KEY(fk1_projectID) REFERENCES project(projectID) 
+	CONSTRAINT fk1_payments_to_project FOREIGN KEY(fk1_projectID) REFERENCES project(projectID)
 );
 
 -- Alter table to add new constraints required to implement the "project_employeeRoles" relationship
@@ -322,7 +322,7 @@ ADD (
 
 ALTER TABLE project
 ADD (
-	CONSTRAINT fk2_pro_to_empRoles FOREIGN KEY(fk2_employeeroleID) REFERENCES employeeRoles(employeeroleID) 
+	CONSTRAINT fk2_pro_to_empRoles FOREIGN KEY(fk2_employeeroleID) REFERENCES employeeRoles(employeeroleID)
 );
 
 -- Alter table to add new constraints required to implement the "project_projectArchive" relationship
@@ -332,7 +332,7 @@ ADD (
 
 -- ALTER TABLE project
 -- ADD (
--- 	CONSTRAINT fk3_pro_to_proArchive FOREIGN KEY(fk3_archiveID) REFERENCES projectArchive(archiveID) 
+-- 	CONSTRAINT fk3_pro_to_proArchive FOREIGN KEY(fk3_archiveID) REFERENCES projectArchive(archiveID)
 -- );
 
 
@@ -340,7 +340,7 @@ ADD (
 -- End of DDL file auto-generation
 --------------------------------------------------------------
 
--- Insert Clients data into the database -- 
+-- Insert Clients data into the database --
 INSERT INTO client VALUES ('1', 'Red Tyres Ltd', '7 Industry Road Amington Tamworth B36 7EG', 'Red.Tyres@mail.com', '901335975');
 INSERT INTO client VALUES ('2', 'TechPartners Ltd', '94 Industy Road Amington Tamworth F85 2BQ', 'Tech.Partners@mail.com', '743652650');
 INSERT INTO client VALUES ('3','RobustEngineering Ltd','13 Industry Road Amington Tamworth B36 8GN','Robust.Engineering@Mail.com','7701316240');
