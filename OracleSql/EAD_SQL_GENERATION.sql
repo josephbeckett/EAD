@@ -434,3 +434,16 @@ INSERT INTO projectTeam_project VALUES ('5', '2020-02-24 08:24:31', '5', '1');
 INSERT INTO projectTeam_project VALUES ('6', '2020-05-25 15:52:23', '6', '2');
 INSERT INTO projectTeam_project VALUES ('7', '2020-02-24 08:24:31', '7', '3');
 INSERT INTO projectTeam_project VALUES ('8', '2020-05-25 15:57:43', '8', '4');
+INSERT INTO projectTeam_project VALUES ('9', '2020-05-27 15:57:33', '8', '1');
+INSERT INTO projectTeam_project VALUES ('10', '2020-05-28 15:27:13', '8', '2');
+INSERT INTO projectTeam_project VALUES ('11', '2020-05-29 15:47:23', '8', '3');
+
+
+-- Insert into Payment data into the Payments Table 
+INSERT INTO Payments VALUES ('1', '3200', '2020-07-06', '0', '1');
+INSERT INTO Payments VALUES ('2', '4800', '2020-08-07', '0', '2');
+INSERT INTO Payments VALUES ('3', '5600', '2020-08-27', '0', '3');
+INSERT INTO Payments VALUES ('4', '800', '2020-08-03', '0', '4');
+
+-- Insert data into the projectHours table
+INSERT INTO projectHours VALUES ('', '', '', '')
