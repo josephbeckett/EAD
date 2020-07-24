@@ -334,7 +334,9 @@ ADD (
 -- ADD (
 -- 	CONSTRAINT fk3_pro_to_proArchive FOREIGN KEY(fk3_archiveID) REFERENCES projectArchive(archiveID)
 -- );
-
+-- Adds a check constraint to the Employee table to check that the skill level column has a value inside it
+ALTER TABLE EMPLOYEE
+ADD CONSTRAINT CHK_Emp_SkillLevel CHECK("SKILLLEVEL" IN ('1','2','3','4')) ENABLE;
 
 --------------------------------------------------------------
 -- End of DDL file auto-generation
