@@ -449,13 +449,13 @@ INSERT INTO Payments VALUES ('4', '800', '2020-08-03', '0', '4');
 
 -- Insert data into the projectHours table
 INSERT INTO projectHours VALUES ('1', '20', '2020-07-01', '1');
-INSERT INTO projectHours VALUES ('2', '20', '', '2');
-INSERT INTO projectHours VALUES ('3', '3', '', '3');
-INSERT INTO projectHours VALUES ('4', '4', '', '4');
-INSERT INTO projectHours VALUES ('5', '10', '', '5');
-INSERT INTO projectHours VALUES ('6', '20', '', '6');
-INSERT INTO projectHours VALUES ('7', '3', '', '7');
-INSERT INTO projectHours VALUES ('8', '4', '', '8');
-INSERT INTO projectHours VALUES ('9', '10', '', '9');
-INSERT INTO projectHours VALUES ('10', '20', '', '10');
-INSERT INTO projectHours VALUES ('11', '3', '', '11');
+INSERT INTO projectHours VALUES ('2', '20', '2020-06-21', '2');
+INSERT INTO projectHours VALUES ('3', '30', '2020-08-1', '3');
+INSERT INTO projectHours VALUES ('4', '5', '2020-05-15', '4');
+INSERT INTO projectHours VALUES ('5', '10', '2020-06-28', '5');
+INSERT INTO projectHours VALUES ('6', '25', '2020-06-24', '6');
+INSERT INTO projectHours VALUES ('7', '20', '2020-05-19', '7');
+INSERT INTO projectHours VALUES ('8', '7', '2020-06-22', '8');
+INSERT INTO projectHours VALUES ('9', '10', '2020-05-13', '9');
+INSERT INTO projectHours VALUES ('10', '20', '2020-06-17', '10');
+INSERT INTO projectHours VALUES ('11', '20', '2020-07-01', '11');
