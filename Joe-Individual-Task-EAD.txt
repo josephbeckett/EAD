@@ -1,0 +1,60 @@
+-- Basic Trigger --
+--Test to see what TO_CHAR() function returns
+SELECT TO_CHAR(SYSDATE, 'DAY') FROM dual;
+
+--Create trigger to limit updates based on day and time
+CREATE OR REPLACE TRIGGER insert_security_checker
+BEFORE INSERT OR DELETE OR UPDATE ON PROJECT
+DECLARE
+
+  DayOfWeek	CHAR(10);
+  HourOfDay	number(2);
+
+BEGIN
+  DayOfWeek := TO_CHAR(SYSDATE, 'DAY');
+  HourOfDay := TO_CHAR(SYSDATE, 'HH24');
+
+  IF DayOfWeek IN ('SATURDAY', 'SUNDAY')
+     OR HourOfDay NOT BETWEEN 9 AND 18 THEN
+  
+     --Raise an application error to stop the process  
+     RAISE_APPLICATION_ERROR(-20006, 'Project insert attempt has been rejected for security reasons, e.g outside work hours');
+  
+  END IF;
+
+END;
+
+DROP TRIGGER INSERT_SECURITY_CHECKER;
+
+alter session set nls_date_format = 'YYYY-MM-DD HH24:MI:SS';
+
+INSERT INTO project VALUES ('5', 'Database Auditing', '2020-06-28', '2020-08-22', '65', '3', '12');
+
+
+-- More Complex Trigger --
+
+
+--Create trigger to limit updates based on day and time
+CREATE OR REPLACE TRIGGER updateEmpSkill
+BEFORE INSERT OR UPDATE ON EMPLOYEE
+DECLARE
+
+
+BEGIN
+  DayOfWeek := TO_CHAR(SYSDATE, 'DAY');
+  HourOfDay := TO_CHAR(SYSDATE, 'HH24');
+
+  IF DayOfWeek IN ('SATURDAY', 'SUNDAYw')
+     OR HourOfDay NOT BETWEEN 9 AND 18 THEN
+  
+     --Raise an application error to stop the process  
+     RAISE_APPLICATION_ERROR(-20006, 'Project insert attempt has been rejected for security reasons, e.g outside work hours');
+  
+  END IF;
+
+END;
+
+
+
+
+
