@@ -78,6 +78,7 @@ CREATE TABLE employee(
 	leaveDate	DATE,
 	Contract	VARCHAR2(50),
 	skillLevel	INTEGER,
+	projectsCompleted INTEGER,
 	-- Specify the PRIMARY KEY constraint for table "employee".
 	-- This indicates which attribute(s) uniquely identify each row of data.
 	CONSTRAINT	pk_employee PRIMARY KEY (employeeID)
@@ -362,21 +363,21 @@ INSERT INTO roles VALUES ('3', 'Intermediate', '15');
 INSERT INTO roles VALUES ('4', 'National Minimum', '8.72');
 
 -- Insert Employee Data into the database --
-INSERT INTO employee VALUES ('1', 'David', 'Steiner', '4 new Drive Amington Tamworth B77 4EJ', '011474960053', '017924960739', 'David.Steiner@Mail.com', '2016-02-24', '', 'Part-Time', '2');
-INSERT INTO employee VALUES ('2', 'Chris', 'Gordon', '2 Liverpool Street Trentham Stoke A37 4BT', '01214960591', '012544960892', 'Chris.Gordon@Mail.com', '2018-11-12', '','Full-Time', '3');
-INSERT INTO employee VALUES ('3', 'Holly', 'Jones', '35 Bishopthorpe Road Penn Stoke ST1 1EN', '07004377321', '07962196398', 'Holly.Jones@Mail.com', '2019-07-17', '', 'Full-Time', '3');
-INSERT INTO employee VALUES ('4', 'Jodie', 'Frost', '7 Lichfield Street Gillway Tamworth B79 4RV', '091394960126', '020574960251', 'Jodie.Frost@Mail.com', '2019-04-02', '', 'Full-Time', '2');
-INSERT INTO employee VALUES ('5', 'Charley', 'May', '8 Blue Way Streetly Lichfield F45 3HJ', '015824960007', '016194960152', 'Charlie.May@Mail.com', '2007-12-04', '', 'Part-Time', '3');
-INSERT INTO employee VALUES ('6', 'Harlie', 'Jones', '19 Red Drive Amington Tamworth B77 3BY', '015824960928', '015194960515', 'Harley.Jones@Mail.com', '2013-03-15', '', 'Full-Time', '2');
-INSERT INTO employee VALUES ('7', 'Ronald', 'Hoof', '98  Winethrough Road Crowley Pendock GL19 0YQ', '07962196398', '056374960039', 'Ronald.H@gmail.com', '2018-11-08', '', 'Part-Time', '3');
-INSERT INTO employee VALUES ('8', 'Kyle', 'Newman', '6 Jester Street Longford Stafford ST16 1AE', '016034960807', '016194960284', 'KyleN@gmail.com', '2010-09-16', '', 'Full-Time', '2');
-INSERT INTO employee VALUES ('9', 'Lisa', 'Stuart', '4 Green Drive Gillway Birmingham B15 1BB', '012024960237', '018654960771', 'Liz@hotmail.com', '2009-03-13', '', 'Part-Time', '3');
-INSERT INTO employee VALUES ('10', 'William', 'Vaughan', '109 Blue Drive Poole Stafford ST17 8HX', '07947508042', '07072505700', 'Will.Vaughan@Mail.com', '2007-09-08', '', 'Full-Time', '2');
-INSERT INTO employee VALUES ('11', 'Owen', 'Pritchard', '55 Union Terrace Papworth Tamworth B75 9NI', '07916369062', '07000641030', 'Owen.Pritchard@Mail.com', '2009-03-24', '', 'Part-Time', '2');
-INSERT INTO employee VALUES ('12', 'Jem', 'Stone', '12 New Street Beacon Stoke C62 4GH', '01625035412', '016044960467', 'Jem.Stone459@Mail.com', '2005-05-19', '', 'Full-Time', '1');
-INSERT INTO employee VALUES ('13', 'Joe', 'Green', '35 New Drive Gillway Tamworth B42 3IJ', '01458765241','01733496089', 'Joe.Green326@Mail.com', '2004-10-06', '', 'Full-Time', '1');
-INSERT INTO employee VALUES ('14', 'George', 'Foster', '12 Old Street Amington Stafford C62 4GH', '01532152430','016044960467', 'george.foster4@Mail.com', '2006-08-25', '', 'Full-Time', '1');
-INSERT INTO employee VALUES ('15', 'Sam', 'Fisher', '35 Spring Drive Dosthill Birmingham B42 3IJ', '01545985461', '017334960895', 'sam.fisher2@Mail.com', '2007-09-11', '', 'Full-Time', '1');
+INSERT INTO employee VALUES ('1', 'David', 'Steiner', '4 new Drive Amington Tamworth B77 4EJ', '011474960053', '017924960739', 'David.Steiner@Mail.com', '2016-02-24', '', 'Part-Time', '2', '5');
+INSERT INTO employee VALUES ('2', 'Chris', 'Gordon', '2 Liverpool Street Trentham Stoke A37 4BT', '01214960591', '012544960892', 'Chris.Gordon@Mail.com', '2018-11-12', '','Full-Time', '3', '9');
+INSERT INTO employee VALUES ('3', 'Holly', 'Jones', '35 Bishopthorpe Road Penn Stoke ST1 1EN', '07004377321', '07962196398', 'Holly.Jones@Mail.com', '2019-07-17', '', 'Full-Time', '3', '12');
+INSERT INTO employee VALUES ('4', 'Jodie', 'Frost', '7 Lichfield Street Gillway Tamworth B79 4RV', '091394960126', '020574960251', 'Jodie.Frost@Mail.com', '2019-04-02', '', 'Full-Time', '2', '15');
+INSERT INTO employee VALUES ('5', 'Charley', 'May', '8 Blue Way Streetly Lichfield F45 3HJ', '015824960007', '016194960152', 'Charlie.May@Mail.com', '2007-12-04', '', 'Part-Time', '3', '6');
+INSERT INTO employee VALUES ('6', 'Harlie', 'Jones', '19 Red Drive Amington Tamworth B77 3BY', '015824960928', '015194960515', 'Harley.Jones@Mail.com', '2013-03-15', '', 'Full-Time', '2', '16');
+INSERT INTO employee VALUES ('7', 'Ronald', 'Hoof', '98  Winethrough Road Crowley Pendock GL19 0YQ', '07962196398', '056374960039', 'Ronald.H@gmail.com', '2018-11-08', '', 'Part-Time', '3', '4');
+INSERT INTO employee VALUES ('8', 'Kyle', 'Newman', '6 Jester Street Longford Stafford ST16 1AE', '016034960807', '016194960284', 'KyleN@gmail.com', '2010-09-16', '', 'Full-Time', '2', '5');
+INSERT INTO employee VALUES ('9', 'Lisa', 'Stuart', '4 Green Drive Gillway Birmingham B15 1BB', '012024960237', '018654960771', 'Liz@hotmail.com', '2009-03-13', '', 'Part-Time', '3', '8');
+INSERT INTO employee VALUES ('10', 'William', 'Vaughan', '109 Blue Drive Poole Stafford ST17 8HX', '07947508042', '07072505700', 'Will.Vaughan@Mail.com', '2007-09-08', '', 'Full-Time', '2', '14');
+INSERT INTO employee VALUES ('11', 'Owen', 'Pritchard', '55 Union Terrace Papworth Tamworth B75 9NI', '07916369062', '07000641030', 'Owen.Pritchard@Mail.com', '2009-03-24', '', 'Part-Time', '2', '16');
+INSERT INTO employee VALUES ('12', 'Jem', 'Stone', '12 New Street Beacon Stoke C62 4GH', '01625035412', '016044960467', 'Jem.Stone459@Mail.com', '2005-05-19', '', 'Full-Time', '1', '0');
+INSERT INTO employee VALUES ('13', 'Joe', 'Green', '35 New Drive Gillway Tamworth B42 3IJ', '01458765241','01733496089', 'Joe.Green326@Mail.com', '2004-10-06', '', 'Full-Time', '1', '0');
+INSERT INTO employee VALUES ('14', 'George', 'Foster', '12 Old Street Amington Stafford C62 4GH', '01532152430','016044960467', 'george.foster4@Mail.com', '2006-08-25', '', 'Full-Time', '1', '0');
+INSERT INTO employee VALUES ('15', 'Sam', 'Fisher', '35 Spring Drive Dosthill Birmingham B42 3IJ', '01545985461', '017334960895', 'sam.fisher2@Mail.com', '2007-09-11', '', 'Full-Time', '1', '0');
 
 -- Insert Data into the EmployeeRoles table --
 INSERT INTO employeeRoles VALUES ('1', '2017-06-24', '1','2');
